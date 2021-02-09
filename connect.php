@@ -6,6 +6,6 @@ if ($conn -> connect_errno) {
   echo "Failed to connect to MySQL: " . $conn -> connect_error;
   exit();
 }else {
-     echo "เชื่อม MySQLได้";
+     //echo "เชื่อม MySQLได้";
 }
 ?>

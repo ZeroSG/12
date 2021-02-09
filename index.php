@@ -7,7 +7,7 @@
 </head>
 <body>
 <?php
-  require_once("connect.php");
+  require_once("select.php");
   ?>
 </body>
 </html>
