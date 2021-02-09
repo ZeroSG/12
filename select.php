@@ -1,8 +1,17 @@
 <?php
  require_once("connect.php");
  $sql = "SELECT * FROM student";
+ if(isset($_GET['search_click'])) {
+  $sql = "SELECT * FROM student WHERE student_id LIKE '%{$_GET['search']}%' OR student_fname LIKE '%{$_GET['search']}%'";
+  echo "<p>คุณกำลังค้นหา : {$_GET['search']}</p>";
+}
 $result = $conn->query($sql);
 ?>
+<form action="." method="get">
+    <label for="search">ช่องค้นหา</label>
+    <input type="text" name="search" id="search" placeholder="ช่องค้นหา...">
+    <button type="submit" name="search_click">ค้นหา</button>
+</form>
 <table style="width:100%" border="1">
   <tr>
     <th>student_id</th>
